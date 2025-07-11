@@ -17,10 +17,6 @@
             }
         }
         stage('build'){
-            tools{
-                jdk 'jdk17'
-                maven 'Maven 3.9.8'
-            }
             steps{
                 sh 'mvn validate'
             }
