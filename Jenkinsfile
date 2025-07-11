@@ -1,7 +1,5 @@
  pipeline{
-    agent {
-        label 'java-slave'
-    }
+    agent any
     tools{
         maven 'Maven 3.8.9'
         jdk 'jdk17'
@@ -18,7 +16,6 @@
         }
         stage('build'){
             tools{
-                jdk 'jdk17'
                 maven 'Maven 3.9.8'
             }
             steps{
