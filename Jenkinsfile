@@ -16,6 +16,7 @@
         }
         stage('build'){
             tools{
+                sh 'mvn --version'
                 maven 'Maven 3.9.8'
             }
             steps{
