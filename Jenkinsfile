@@ -3,8 +3,8 @@
         label 'java-slave'
     }
     tools{
-        jdk 'jdk17'
         maven 'Maven 3.8.9'
+        jdk 'jdk17'
     }
     stages{
         stage('checkout scm'){
@@ -17,8 +17,12 @@
             }
         }
         stage('build'){
+            tools{
+                jdk 'jdk17'
+                maven 'Maven 3.9.8'
+            }
             steps{
-                sh 'mvn validate'
+                sh 'mvn clean validate'
             }
         }
     }
