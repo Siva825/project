@@ -1,16 +1,12 @@
 pipeline{
-    agent any
+    agent {
+        label'java-slave'
+    }
     stages{
-        stage ('build'){
+        stage('Build'){
             steps{
-                script{
-                    def course='devops'
-                    if (course=='devops1')
-                    println "application is success"
-                    else
-                    println"application fail"
-                }
-                     
+                echo "hi everyone"
+                error "this is giving some error"
             }
         }
     }
