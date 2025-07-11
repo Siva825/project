@@ -1,15 +1,15 @@
 pipeline{
-    agent{
-        label 'java-slave'
+    agent any
+    tools{
+        maven 'Maven 3.9.8'
     }
     stages{
         stage('build'){
             steps{
-                timeout(time:10, unit:'SECONDS'){
-                echo "******go ahead*********"
-                sleep 30                   
-                }
+                echo "hi are you there"
+                sh 'mvn --version'
             }
         }
+
     }
 }
