@@ -1,20 +1,12 @@
-pipeline{
-    agent {
-        label'java-slave'
+ pipeline{
+    agent{
+        slave'java-slave'
     }
     stages{
-        stage('Build'){
+        stage('build'){
             steps{
-                retry(5){
-                    echo "hi everyone"
-                    error "this is giving some error"
-                }
-                 
-            }
-        }
-        stage('test'){
-            steps{
-                echo "this is test block"
+                echo "******go ahead*********"
+                sleep 30
             }
         }
     }
