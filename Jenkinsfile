@@ -5,8 +5,11 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "hi everyone"
-                error "this is giving some error"
+                retry(5){
+                    echo "hi everyone"
+                    error "this is giving some error"
+                }
+                 
             }
         }
     }
