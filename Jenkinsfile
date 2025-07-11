@@ -1,20 +1,27 @@
-pipeline{
-    agent any
+ pipeline{
+    agent {
+        label 'java-slave'
+    }
     tools{
-        maven 'Maven 3.8.9'
         jdk 'jdk17'
+        maven 'Maven 3.8.9'
     }
     stages{
-        stage('checkout'){
+        stage('checkout scm'){
             steps{
-                git url : 'https://github.com/Siva825/project.git',
-                credentialsId : 'Siva825_git_creds',
-                branch : 'main'
+                git (
+                    branch: 'main',
+                    credentialsId: 'Siva825_git_creds',
+                    url: 'https://github.com/Siva825/project.git'
+                )        
             }
         }
-        stage('build'){
+        stage{'build'}{
+            tools{
+                maven 'Maven 3.9.8'
+            }
             steps{
-                sh 'mvn clean package'
+                sh 'mvn validate'
             }
         }
     }
