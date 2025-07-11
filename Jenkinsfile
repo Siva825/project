@@ -16,7 +16,7 @@
                 )        
             }
         }
-        stage{'build'}{
+        stage('build'){
             tools{
                 maven 'Maven 3.9.8'
             }
