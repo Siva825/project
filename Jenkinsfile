@@ -1,17 +1,20 @@
  pipeline{
     agent any
-    tools{
-        maven 'Maven 3.9.8'
-    }
     stages{
         stage('build'){
             tools{
                 jdk 'jdk17'
             }
             steps{
-                sh "hostname -i"
-                sh "mvn --version"
-                sh "mvn package"
+                Script{
+                    def (course= "deveops")
+                    if (course=="devepos")
+                    println "hi"
+                    else
+                    println "bye"
+
+                }
+                 
             }
         }
     }
