@@ -7,8 +7,8 @@
             }
             steps{
                 Script{
-                    def (course= "deveops")
-                    if (course=="devepos")
+                    def (course= "devops")
+                    if (course=="devops")
                     println "hi"
                     else
                     println "bye"
