@@ -7,7 +7,7 @@
             }
             steps{
                 Script{
-                    def course= "devops"
+                    def course='devops'
                     if (course=="devops")
                     println "hi"
                     else
